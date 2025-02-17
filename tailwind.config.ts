@@ -9,12 +9,33 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+      screens: {
+        sx: '400px',
+        sm: '600px',
+        md: '728px',
+        lg: '984px',
+        xl: '1240px',
+        '2xl': '1496px',
+      },
+    },
     extend: {
       fontFamily: {
         changa: ['Changa', 'sans-serif'],
         exo2: ['Exo 2', 'sans-serif'],
         orbitron: ['Orbitron', 'sans-serif'],
         oxanium: ['Oxanium', 'sans-serif'],
+      },
+      extend: {
+        translate: ['active'],
       },
     },
   },
@@ -36,7 +57,7 @@ export default {
           "error": "#f12843",
         },
       },
-      "light", "dark", "cupcake"
+      "light", "dark"
     ],
   },
 } satisfies Config;

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+
 interface Button {
     btnClass: string;
     title: string;
@@ -14,3 +15,4 @@ interface NavLink {
     href: string
     submenu?: SubNavLink[]
 }
+
