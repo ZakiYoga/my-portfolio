@@ -18,10 +18,12 @@ const SocialIcon: React.FC<SocialIconProps> = ({
     link,
 }) => {
     return (
-        <div className={`grid place-content-center rounded-sm ${bgColor} ${size} hover:scale-105 transition-all `}>
+        <div className={`relative grid place-content-center mx-2 shadow-[box-shadow:2px_2px_0px_#000] ${bgColor} ${size} hover:scale-105 transition-all `}>
             <Link href={link}>
                 <Icon className={`text-3xl ${iconColor} p-0.5`} />
             </Link>
+            <div className={`absolute -left-1 top-1 w-1 h-[80%] ${bgColor} group-hover:bg-gray-800 transition-colors `} />
+            <div className={`absolute -right-1 top-1 w-1 h-[80%] ${bgColor} group-hover:bg-gray-800 transition-colors [box-shadow:2px_2px_0px_#000] group-active:shadow-none`} />
         </div>
     );
 };

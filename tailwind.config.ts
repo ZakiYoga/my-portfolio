@@ -19,7 +19,7 @@ export default {
         '2xl': '6rem',
       },
       screens: {
-        sx: '400px',
+        xs: '400px',
         sm: '600px',
         md: '728px',
         lg: '984px',
@@ -29,10 +29,15 @@ export default {
     },
     extend: {
       fontFamily: {
-        changa: ['Changa', 'sans-serif'],
-        exo2: ['Exo 2', 'sans-serif'],
-        orbitron: ['Orbitron', 'sans-serif'],
-        oxanium: ['Oxanium', 'sans-serif'],
+        'press-start': ['"Press Start 2P"', 'cursive'],
+        'vt323': ['VT323', 'monospace'],
+        'hanjet': ['Hanjet', 'sans-serif'],
+        'jersey-10': ['Jersey 10', 'sans-serif'],
+        'jersey-15': ['Jersey 15', 'sans-serif'],
+        'jersey-20': ['Jersey 20', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-custom': 'linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))',
       },
       extend: {
         translate: ['active'],
@@ -45,7 +50,15 @@ export default {
   daisyui: {
     themes: [
       {
-        mytheme: {
+        light: {
+          "primary": "#0092ca",
+          "background": "#fff",
+          "--gradient-start": "#ffffff",
+          "--gradient-end": "#4C91F9",
+        },
+      },
+      {
+        dark: {
           "primary": "#0092ca",
           "secondary": "#0284c7",
           "accent": "#eeeeee",
@@ -55,9 +68,11 @@ export default {
           "success": "#22c55e",
           "warning": "#eab308",
           "error": "#f12843",
+          "background": "#000",
+          "--gradient-start": "#000000",
+          "--gradient-end": "#133770",
         },
       },
-      "light", "dark"
     ],
   },
 } satisfies Config;

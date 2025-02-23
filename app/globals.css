@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Jersey+10&family=Jersey+15&family=Jersey+20&family=Press+Start+2P&family=VT323&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Open Sans';
+  font-family: "VT323", serif;
 }

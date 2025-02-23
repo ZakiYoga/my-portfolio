@@ -1,10 +1,11 @@
 import React from 'react'
 import { navLinks } from './Navlink'
 import ToggleTheme from '../toggleTheme/ToggleTheme'
+import PixelButton from '../Button'
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-base-100 px-8">
+        <div className="navbar px-8 sticky z-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -21,7 +22,7 @@ const Navbar = () => {
                                 d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow">
                         {navLinks.map((link, index) => (
                             link.submenu ? (
                                 <li key={index} className="dropdown dropdown-hover">
@@ -43,7 +44,7 @@ const Navbar = () => {
                 <a className="btn btn-ghost text-xl font-changa gap-0">Zki<span className="text-primary">Str.</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 font-oxanium">
+                <ul className="menu menu-horizontal px-1 font-press-start text-xs">
                     {navLinks.map((link, index) => (
                         link.submenu ? (
                             <li key={index}>
@@ -63,12 +64,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-4">
-                <button className="btn font-oxanium btn-primary min-h-0 h-auto px-2.5 py-2.5 
-  transition-transform duration-200 grid place-items-center rounded-md !border-[1px] !border-base-200 hover:border-base-200
-  shadow-[4px_4px_0px_#212121] !scale-100
-  active:translate-x-[3px] active:translate-y-[3px] active:shadow-none !active:hover:animate-none">
+                <PixelButton className="w-fit px-2 py-1.5">
                     Download CV
-                </button>
+                </PixelButton>
 
                 <ToggleTheme />
             </div>
