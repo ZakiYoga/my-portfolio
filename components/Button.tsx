@@ -91,6 +91,9 @@ const PixelButton = ({
                 border-[1px]
                 font-pixel
                 transition-all
+                hover:bg-base-200
+                hover:border-primary-focus
+                hover:-translate-y-1
                 active:translate-x-0.5
                 active:translate-y-0.5
                 active:shadow-none
@@ -108,6 +111,7 @@ const PixelButton = ({
                 transition-colors
                 border-y-[1px]
                 border-l-[1px]
+                group-hover:bg-base-200
                 ${currentVariant.side}
                 ${disabled ? 'opacity-50' : ''}
             `} />
@@ -119,6 +123,7 @@ const PixelButton = ({
                 border-y-[1px]
                 border-r-[1px]
                 z-10
+                group-hover:bg-base-200
                 ${currentVariant.side}
                 ${disabled ? 'opacity-50' : ''}
             `} />

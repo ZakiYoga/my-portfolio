@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 import daisyui from "daisyui"
-
+import daisyuiThemes from 'daisyui/src/theming/themes';
 
 export default {
   content: [
@@ -28,6 +28,13 @@ export default {
       },
     },
     extend: {
+      colors: {
+        border: "var(--border-color)",
+        success: '#16A34A',
+        warning: '#FACC15',
+        danger: '#DC2626',
+        info: '#3B82F6',
+      },
       fontFamily: {
         'press-start': ['"Press Start 2P"', 'cursive'],
         'vt323': ['VT323', 'monospace'],
@@ -38,6 +45,14 @@ export default {
       },
       backgroundImage: {
         'gradient-custom': 'linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))',
+      },
+      dropShadow: {
+        'text-xs': '2px 1px 0px var(--text-shadow-color)',
+        'text-sm': '4px 2px 0px var(--text-shadow-color)',
+        'text-md': '4px 4px 0px var(--text-shadow-color)',
+        'text-xs-d': '2px 1px 0px var(--text-foreground)',
+        'text-sm-d': '4px 2px 0px var(--text-foreground)',
+        'text-md-d': '4px 4px 0px var(--text-foreground)',
       },
       extend: {
         translate: ['active'],
@@ -51,24 +66,33 @@ export default {
     themes: [
       {
         light: {
+          ...daisyuiThemes.light,
           "primary": "#0092ca",
+          "primary-focus" : "#fff",
+          "secondary": "#fff",
+          "accent": "#eeeeee",
           "background": "#fff",
+          "foreground": "#000",
+          "muted": "#f0f1f3",
+          "base-content": "#000",
+          "--shadow-color": "#fff",
+          "--text-shadow-color": "#fff",
           "--gradient-start": "#ffffff",
           "--gradient-end": "#4C91F9",
         },
       },
       {
         dark: {
-          "primary": "#0092ca",
-          "secondary": "#0284c7",
+          ...daisyuiThemes.dark,
+          "primary": "#222831",
+          "secondary": "#1e1e1e",
           "accent": "#eeeeee",
-          "neutral": "#222831",
-          "base-100": "#393e46",
-          "info": "#06b6d4",
-          "success": "#22c55e",
-          "warning": "#eab308",
-          "error": "#f12843",
           "background": "#000",
+          "foreground": "#fff",
+          "muted": "#f0f1f3",
+          "base-content": "#fff",
+          "--shadow-color": "220, 220, 255", 
+          "--text-shadow-color": "#000",
           "--gradient-start": "#000000",
           "--gradient-end": "#133770",
         },

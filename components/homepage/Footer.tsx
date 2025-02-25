@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SkillSection() {
+function Footer() {
     return (
         <div>
 
@@ -8,4 +8,4 @@ function SkillSection() {
     )
 }
 
-export default SkillSection
+export default Footer

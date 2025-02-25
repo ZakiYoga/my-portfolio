@@ -41,7 +41,12 @@ const Navbar = () => {
                         ))}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl font-changa gap-0">Zki<span className="text-primary">Str.</span></a>
+                <a className="btn btn-ghost text-xl font-changa gap-0">
+                    Zki
+                    <span className="text-[#0092ca]">
+                        Str.
+                    </span>
+                </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-press-start text-xs">
@@ -64,7 +69,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-4">
-                <PixelButton className="w-fit px-2 py-1.5">
+                <PixelButton className="hidden w-fit px-2 py-2.5 font-press-start text-xs text-[0.6rem] md:flex">
                     Download CV
                 </PixelButton>
 
