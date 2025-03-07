@@ -1,8 +1,20 @@
 'use client'
 import React from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 // import { useRouter } from 'next/navigation'
 import PixelButton from '../Button'
+import MarqueeText from '../MarqueeText';
+
+const techItems = [
+    { text: "JAVASCRIPT", icon: "/assets/icons/coin-svg.png", alt: "coinIcon" },
+    { text: "REACT", icon: "/assets/icons/star-svg.png", alt: "starIcon" },
+    { text: "VUE", icon: "/assets/icons/coin-svg.png", alt: "coinIcon" },
+    { text: "PHP", icon: "/assets/icons/star-svg.png", alt: "starIcon" },
+    { text: "NODEJS", icon: "/assets/icons/coin-svg.png", alt: "coinIcon" },
+    { text: "NEXTJS", icon: "/assets/icons/star-svg.png", alt: "starIcon" },
+    { text: "NUXTJS", icon: "/assets/icons/coin-svg.png", alt: "coinIcon" },
+    { text: "LARAVEL", icon: "/assets/icons/star-svg.png", alt: "starIcon" },
+];
 
 function ProjectSection() {
     // const router = useRouter();
@@ -18,62 +30,14 @@ function ProjectSection() {
     return (
         <>
             <div className="inline-flex items-center tracking-wider uppercase text-2xl w-full h-fit gap-8 py-4 bg-transparent overflow-x-hidden">
-                <Image src="/assets/icons/coin-svg.png"
-                    alt="coinIcon"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6 grid place-items-center"
+                <MarqueeText
+                    items={techItems}
+                    speed={15}
+                    className="bg-base-200 rounded-lg"
+                    textClassName="font-bold"
+                    iconClassName="grid place-items-center"
+                    direction="right"
                 />
-                <h2 className="">JAVASCRIPT</h2>
-                <Image src="/assets/icons/star-svg.png"
-                    alt="coinIcon"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                />
-                <h2>REACT</h2>
-                <Image src="/assets/icons/coin-svg.png"
-                    alt="coinIcon"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6 grid place-items-center"
-                />
-                <h2>VUE</h2>
-                <Image src="/assets/icons/star-svg.png"
-                    alt="coinIcon"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                />
-                <h2>PHP</h2>
-                <Image src="/assets/icons/coin-svg.png"
-                    alt="coinIcon"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6 grid place-items-center"
-                />
-                <h2>NODEJS</h2>
-                <Image src="/assets/icons/star-svg.png"
-                    alt="coinIcon"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                />
-                <h2>NEXTJS</h2>
-                <Image src="/assets/icons/coin-svg.png"
-                    alt="coinIcon"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6 grid place-items-center"
-                />
-                <h2>NUXTJS</h2>
-                <Image src="/assets/icons/star-svg.png"
-                    alt="coinIcon"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                />
-                <h2>LARAVEL</h2>
             </div>
             <div className="container h-screen flex flex-col items-center justify-start w-full max-w-none bg-gradient-custom overflow-x-hidden">
                 <h2 className="font-press-start text-2xl">Recent Projects</h2>
