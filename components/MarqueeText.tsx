@@ -1,68 +1,33 @@
-'use client'
-import React, { FC } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import { motion } from 'framer-motion';
 
-interface MarqueeItemType {
-    text: string;
-    icon: string;
-    alt: string;
-}
-
 interface MarqueeTextProps {
-    items: MarqueeItemType[];
-    speed?: number;
-    className?: string;
-    textClassName?: string;
-    iconClassName?: string;
-    direction?: 'left' | 'right';
+    children: React.ReactNode;
+    rotate: string;
+    delay?: number;
 }
 
-const MarqueeText: FC<MarqueeTextProps> = ({
-    items,
-    speed = 20,
-    className = "",
-    textClassName = "",
-    iconClassName = "",
-    direction = 'right'
-}) => {
-    // Duplicate the items array to create a seamless loop
-    const duplicatedItems = [...items, ...items];
-
-    // Set the animation direction
-    const directionMultiplier = direction === 'left' ? 1 : -1;
-
+function MarqueeText({ children, rotate, delay = 0 }: MarqueeTextProps) {
     return (
-        <div className={`w-full h-fit py-4 overflow-hidden ${className}`}>
+        <div
+            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${rotate} w-[120%] h-10 bg-white overflow-hidden flex items-center`}
+        >
             <motion.div
-                className="inline-flex items-center tracking-wider uppercase text-2xl gap-8"
-                animate={{
-                    x: directionMultiplier * -50 * items.length + '%'
-                }}
-                initial={{
-                    x: 0
-                }}
+                initial={{ x: "-10%" }}
+                animate={{ x: ["0%", "calc(-50% + 50vw)", "0%"] }}
                 transition={{
+                    duration: 15,
+                    ease: "easeInOut",
                     repeat: Infinity,
-                    duration: items.length * speed,
-                    ease: "linear",
+                    repeatType: "reverse",
+                    delay: delay
                 }}
+                className="whitespace-nowrap flex items-center text-black font-medium"
             >
-                {duplicatedItems.map((item, index) => (
-                    <div key={`${item.text}-${index}`} className="flex items-center gap-8">
-                        <Image
-                            src={item.icon}
-                            alt={item.alt}
-                            width={24}
-                            height={24}
-                            className={`w-6 h-6 ${iconClassName}`}
-                        />
-                        <h2 className={textClassName}>{item.text}</h2>
-                    </div>
-                ))}
+                {children}
             </motion.div>
         </div>
     );
-};
+}
 
 export default MarqueeText;

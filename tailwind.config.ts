@@ -46,6 +46,9 @@ export default {
         'jersey-15': ['Jersey 15', 'sans-serif'],
         'jersey-20': ['Jersey 20', 'sans-serif'],
       },
+      backgroundColor: {
+        'sky': 'var(--gradient-end)',
+      },
       backgroundImage: {
         'gradient-custom': 'linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))',
       },
