@@ -5,7 +5,7 @@ import PixelButton from '../Button'
 
 const Navbar = () => {
     return (
-        <div className="navbar px-8 sticky z-10">
+        <div className="navbar w-full h-fit px-8 sticky z-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

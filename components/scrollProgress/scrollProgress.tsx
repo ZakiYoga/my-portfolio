@@ -31,7 +31,7 @@ const ScrollProgress = () => {
     return (
         <button
             onClick={scrollToTop}
-            className={`btn btn-circle fixed btn-lg bottom-8 right-8 transition-all duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
+            className={`btn btn-circle fixed btn-lg bottom-8 right-8 z-50 transition-all duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
                 }`}
             style={{
                 background: `conic-gradient(hsl(var(--p)) ${progress}%, hsl(var(--b2)) 0%)`,

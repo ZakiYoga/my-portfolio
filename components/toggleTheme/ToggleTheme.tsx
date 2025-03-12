@@ -1,31 +1,20 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
+import { useTheme } from '../ThemeProvider'
 
 function ToggleTheme() {
-    const [theme, setTheme] = useState(() => {
-        if (typeof window !== 'undefined') {
-            return localStorage.getItem('theme') || 'light'
-        }
-        return 'light'
-    })
+    const { theme, toggleTheme } = useTheme()
 
-    useEffect(() => {
-        localStorage.setItem('theme', theme)
-        document.documentElement.setAttribute('data-theme', theme)
-    }, [theme])
-
-    const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setTheme(e.target.checked ? 'dark' : 'light')
-    }
+    const isDark = theme === 'dark'
 
     return (
         <label className="swap swap-rotate relative bg-secondary group min-h-0 h-auto px-2.5 py-1.5 btn-link border-[1px] hover:-translate-y-1 hover:bg-slate-100 hover:border-base-content border-base-content active:border-[1px] transition-transform duration-2000 grid place-items-center shadow-[4px_4px_0px_#000] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none">
             <input
                 type="checkbox"
                 className="theme-controller"
-                checked={theme === 'dark'}
-                onChange={handleToggle}
+                checked={isDark}
+                onChange={() => toggleTheme()}
             />
 
             <Image

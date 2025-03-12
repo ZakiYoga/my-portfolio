@@ -1,18 +1,23 @@
-'use client'
 import AboutSection from "@/components/homepage/aboutSection";
-import CertificateSection from "@/components/homepage/cSection";
-import Footer from "@/components/homepage/Footer";
+import CertificateSection from "@/components/homepage/certificateSection";
 import MainSection from "@/components/homepage/mainSection";
 import ProjectSection from "@/components/homepage/projectSection";
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: 'MyPortfolio - Beranda',
+};
 
 export default function Home() {
   return (
-    <div>
+    <>
       <MainSection />
       <AboutSection />
-      <CertificateSection />
-      <ProjectSection />
-      <Footer />
-    </div>
+      <div className="bg-gradient-custom">
+        <CertificateSection />
+        <ProjectSection />
+      </div>
+    </>
   );
 }

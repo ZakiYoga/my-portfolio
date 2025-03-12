@@ -97,7 +97,7 @@ const PixelButton = ({
                 active:translate-x-0.5
                 active:translate-y-0.5
                 active:shadow-none
-                [box-shadow:4px_4px_0px_#000]
+                [box-shadow:4px_4px_0px_#121212]
                 ${isBlock ? 'w-full' : 'w-auto'}
                 ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
                 ${currentVariant.button}
@@ -118,7 +118,7 @@ const PixelButton = ({
             <div className={`
                 absolute -right-1.5 top-1 w-1.5 h-[80%]
                 transition-colors
-                [box-shadow:4px_4px_0px_#000]
+                [box-shadow:4px_4px_0px_#121212]
                 group-active:shadow-none
                 border-y-[1px]
                 border-r-[1px]
