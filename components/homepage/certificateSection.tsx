@@ -2,7 +2,7 @@
 import React, { useMemo } from 'react'
 import BoxPixel from '../BoxPixel'
 import { motion } from 'framer-motion'
-import { certificates } from './certificateData'
+import { certificates } from '@/app/DATA/certificateData'
 
 function CertificateSection() {
     // Split the certificates array into two halves
@@ -16,7 +16,7 @@ function CertificateSection() {
 
     return (
         <div className="container flex items-start justify-center relative overflow-y-hidden h-fit lg:min-h-screen">
-            <div className="flex flex-col items-center justify-start w-full h-full mt-14 z-10 overflow-x-hidden gap-12">
+            <div className="flex flex-col items-center justify-start w-full h-full mt-14 mb-4 z-10 overflow-x-hidden gap-8">
                 <motion.h1
                     className="font-press-start text-xl uppercase drop-shadow-text-md"
                     initial={{ opacity: 0, y: -20 }}
@@ -37,7 +37,7 @@ function CertificateSection() {
                     {firstHalf.map((data, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, x: -50 }}
+                            initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
@@ -55,7 +55,7 @@ function CertificateSection() {
 
                 {/* Animation scroll from right to left */}
                 <motion.div
-                    className="flex w-full items-center justify-end gap-8 overflow-x-hidden"
+                    className="flex w-full items-center justify-end gap-4 overflow-x-hidden"
                     initial={{ x: 100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, staggerChildren: 0.1 }}

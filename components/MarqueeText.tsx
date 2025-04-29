@@ -10,19 +10,19 @@ interface MarqueeTextProps {
 function MarqueeText({ children, rotate, delay = 0 }: MarqueeTextProps) {
     return (
         <div
-            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${rotate} w-[120%] h-10 bg-white overflow-hidden flex items-center`}
+            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${rotate} w-full h-10 bg-base-100 overflow-hidden flex items-center border-dashed-4 `}
         >
             <motion.div
-                initial={{ x: "-10%" }}
-                animate={{ x: ["0%", "calc(-50% + 50vw)", "0%"] }}
+                initial={{ x: "0%" }}
+                animate={{ x: ["0%", "-110%", "0%"] }}
                 transition={{
-                    duration: 15,
-                    ease: "easeInOut",
+                    duration: 60,
                     repeat: Infinity,
-                    repeatType: "reverse",
+                    repeatType: "mirror",
+                    ease: "easeInOut",
                     delay: delay
                 }}
-                className="whitespace-nowrap flex items-center text-black font-medium"
+                className="whitespace-nowrap flex font-medium w-full justify-start"
             >
                 {children}
             </motion.div>

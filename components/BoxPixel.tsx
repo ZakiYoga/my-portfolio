@@ -5,7 +5,7 @@ import React, { ReactNode } from 'react'
 const sizeVariants = {
     sm: { width: 200, height: 150 },
     md: { width: 300, height: 200 },
-    lg: { width: 400, height: 250 },
+    lg: { width: 400, height: 240 },
     xl: { width: 500, height: 350 }
 }
 
@@ -18,7 +18,7 @@ interface BoxPixelProps extends React.HTMLAttributes<HTMLDivElement> {
     children?: ReactNode
     size?: keyof typeof sizeVariants
     imageSrc?: string
-    imageAlt: string
+    imageAlt?: string
     orientation?: Orientation
     overlay?: boolean
     hoverEffect?: boolean
@@ -53,9 +53,10 @@ const BoxPixel: React.FC<BoxPixelProps> = ({
         justify-center
         ${hoverEffect ? 'hover:cursor-pointer hover:-translate-y-1 transition-all duration-300' : ''} 
         my-2 
-        py-2 
+        group
         ${orientation === 'vertical' ? 'rotate-90' : ''}
-        ${className || ''}
+        ${className || ''
+                }
       `}
             style={{
                 minWidth: `${dimensions.width}px`,
@@ -66,15 +67,15 @@ const BoxPixel: React.FC<BoxPixelProps> = ({
             {/* Content container */}
             <div className="relative flex items-center justify-center">
                 {/* Image or children content */}
-                {imageSrc ? (
+                {imageSrc && imageAlt ? (
                     <Image
                         src={imageSrc}
                         alt={imageAlt}
                         width={dimensions.width}
                         height={dimensions.height}
                         className={`
-              p-2 
-              w-full
+              p-2
+              aspect-[4.1/3]
               object-cover
             `}
                     />

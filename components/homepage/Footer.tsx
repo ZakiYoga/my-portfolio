@@ -132,7 +132,7 @@ function Footer() {
                 variants={landVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
             >
                 <div className="h-[20vh] bg-[url('/assets/img/landlight.png')] w-full bg-[-6px_-4px]"
                 />
@@ -141,7 +141,7 @@ function Footer() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                 >
                     <div className="footer justify-between overflow-hidden w-full h-full text-white py-10">
                         <motion.div
@@ -158,7 +158,7 @@ function Footer() {
                                     initial={{ opacity: 0 }}
                                     whileInView={{ opacity: 1 }}
                                     transition={{ delay: 0.4, duration: 0.3 }}
-                                    viewport={{ once: false }}
+                                    viewport={{ once: true }}
                                 >
                                     Str.
                                 </motion.span>
@@ -172,7 +172,7 @@ function Footer() {
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.6, duration: 0.5 }}
-                                    viewport={{ once: false }}
+                                    viewport={{ once: true }}
                                 >
                                     Thank you for visiting!
                                 </motion.p>
@@ -181,7 +181,7 @@ function Footer() {
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.8, duration: 0.5 }}
-                                    viewport={{ once: false }}
+                                    viewport={{ once: true }}
                                 >
                                     Feel free to reach out for the collabotations.
                                 </motion.p>
@@ -193,7 +193,7 @@ function Footer() {
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ duration: 0.5 }}
-                                viewport={{ once: false }}
+                                viewport={{ once: true }}
                             >
                                 {
                                     MenuFooter.map((menu: FooterProps, index: number) => (
@@ -204,7 +204,7 @@ function Footer() {
                                             variants={menuItemVariants}
                                             initial="hidden"
                                             whileInView="visible"
-                                            viewport={{ once: false }}
+                                            viewport={{ once: true }}
                                             whileHover={{ scale: 1.1 }}
                                             whileTap={{ scale: 0.95 }}
                                         >
@@ -221,7 +221,7 @@ function Footer() {
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
-                                viewport={{ once: false }}
+                                viewport={{ once: true }}
                             >
                                 {
                                     SocialFooter.map((menu: FooterProps, index: number) => (
@@ -232,7 +232,7 @@ function Footer() {
                                             variants={socialItemVariants}
                                             initial="hidden"
                                             whileInView="visible"
-                                            viewport={{ once: false }}
+                                            viewport={{ once: true }}
                                             whileHover={{
                                                 rotate: [0, -10, 10, -10, 0],
                                                 transition: { duration: 0.5 }
@@ -258,14 +258,14 @@ function Footer() {
                         variants={copyrightVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.5 }}
                     >
                         [C]2024. Made with
                         <motion.div
                             variants={heartBeatVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: false }}
+                            viewport={{ once: true }}
                         >
                             <Image
                                 src="/assets/icons/heart-svg.svg"

@@ -111,8 +111,8 @@ function MainSection() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.7, duration: 0.5 }}
                         >
-                            <div className="w-full h-[40%] bg-neutral-50/80" />
-                            <div className="w-full h-[60%] bg-neutral-50/80" />
+                            <div className="w-full h-[40%] bg-base-100/60" />
+                            <div className="w-full h-[60%] bg-base-100/60" />
                         </motion.div>
                     </motion.div>
                     <div className="flex flex-col justify-center items-center max-w-xl lg:items-start gap-2">
@@ -189,7 +189,7 @@ function MainSection() {
                                         transition={{ duration: 0.5, delay: 1 + (index * 0.1) }}
                                         viewport={{ once: true }}
                                         whileHover={{
-                                            scale: 1.2,
+                                            scale: 1.1,
                                             transition: { duration: 0.2 }
                                         }}
                                         whileTap={{ scale: 0.9 }}
@@ -219,13 +219,15 @@ function MainSection() {
                     variants={cloudVariants}
                     initial="initial"
                     animate="animate"
+                    className="w-screen"
                 >
                     <Image
-                        src="/assets/img/cloud.png"
+                        src="/assets/img/wood-light.gif"
                         alt="landlight"
-                        width={80}
-                        height={80}
-                        className='-mb-1'
+                        width={120}
+                        height={120}
+                        className='-mb-0.5 -z-20'
+                        unoptimized
                     />
                 </motion.div>
                 <motion.div

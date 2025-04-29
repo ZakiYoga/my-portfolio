@@ -1,8 +1,8 @@
+import MainSection from "@/components/homepage/mainSection";
 import AboutSection from "@/components/homepage/aboutSection";
 import CertificateSection from "@/components/homepage/certificateSection";
-import MainSection from "@/components/homepage/mainSection";
-import ProjectSection from "@/components/homepage/projectSection";
 import SkillsAndProjects from "@/components/homepage/skillsAndProjects";
+import ProjectSection from "@/components/homepage/projectSection";
 import type { Metadata } from "next";
 
 

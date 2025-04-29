@@ -16,3 +16,19 @@ interface NavLink {
     submenu?: SubNavLink[]
 }
 
+interface Project {
+    id: number;
+    title: string;
+    description: string;
+    linkProject: string;
+    linkGithub: string;
+    techStack: string[];
+}
+
+interface ProjectItemProps {
+    project: Project;
+    index: number;
+    isLoading: boolean;
+    handleViewProject: () => void;
+    handleViewGithub: () => void;
+}

@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function ContactPage() {
+function Projects() {
     return (
         <div>
-
+            my project
         </div>
     )
 }
+
+export default Projects
