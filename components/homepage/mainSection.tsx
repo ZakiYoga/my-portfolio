@@ -182,6 +182,30 @@ function MainSection() {
                                 viewport={{ once: true, amount: 0.2 }}
                                 className="flex gap-x-4">
                                 {socialMedia.map((social, index) => (
+                                    social.name == 'github' ? 
+                                                                        <motion.div
+                                        key={social.name}
+                                        initial={{ opacity: 0, x: 50 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.5, delay: 1 + (index * 0.1) }}
+                                        viewport={{ once: true }}
+                                        whileHover={{
+                                            scale: 1.1,
+                                            transition: { duration: 0.2 }
+                                        }}
+                                        whileTap={{ scale: 0.9 }}
+                                    >
+                                        <PixelButton size='xs'>
+                                            <Image
+                                            className='dark:invert'
+                                                src={social.imgSrc}
+                                                alt={`${social.name}Icon`}
+                                                width={24}
+                                                height={24}
+                                            />
+                                        </PixelButton>
+                                    </motion.div>
+                                    :
                                     <motion.div
                                         key={social.name}
                                         initial={{ opacity: 0, x: 50 }}
@@ -216,20 +240,20 @@ function MainSection() {
                 transition={{ delay: 1.2, duration: 0.8 }}
             >
                 <motion.div
-                    variants={cloudVariants}
-                    initial="initial"
-                    animate="animate"
-                    className="w-screen"
-                >
-                    <Image
-                        src="/assets/img/wood-light.gif"
-                        alt="landlight"
-                        width={120}
-                        height={120}
-                        className='-mb-0.5 -z-20'
-                        unoptimized
-                    />
-                </motion.div>
+    variants={cloudVariants}
+    initial="initial"
+    animate="animate"
+    className="relative w-full flex justify-center items-center"
+>
+    <Image
+        src="/assets/img/wood-light.gif"
+        alt="landlight"
+        width={120}
+        height={120}
+        className='-mb-0.5'
+        unoptimized
+    />
+</motion.div>
                 <motion.div
                     className="h-[20vh] bg-[url('/assets/img/landlight.png')] w-full bg-left-top lg:bottom-0 md:-bottom-12 sm:-bottom-18"
                     initial={{ y: 100, opacity: 0 }}

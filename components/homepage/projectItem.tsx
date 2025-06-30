@@ -113,7 +113,7 @@ const ProjectItem = ({ project, index, isLoading, handleViewProject, handleViewG
                 transition={{ type: "spring", stiffness: 300 }}
             >
                 <BoxPixel
-                    imageSrc="/assets/img/2.png"
+                    imageSrc={project.imgSrc}
                     imageAlt={project.title}
                     size="lg"
                     className="w-full h-full"

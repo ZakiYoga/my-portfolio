@@ -22,6 +22,7 @@ interface Project {
     description: string;
     linkProject: string;
     linkGithub: string;
+    imgSrc?: string;
     techStack: string[];
 }
 
