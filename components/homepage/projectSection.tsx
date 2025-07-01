@@ -7,22 +7,24 @@ import PixelButton from '../Button';
 import { useRouter } from 'next/navigation';
 
 function ProjectSection() {
-    const router = useRouter()
-    const [isLoading, setIsLoading] = React.useState(false);
+    const router = useRouter();
+    const [isPending, startTransition] = React.useTransition();
+    const [isProjectPagePending, startProjectPageTransition] = React.useTransition();
 
-    const handleViewProject = (): void => {
-        setIsLoading(true);
-        router.push("/")
+    const handleViewProject = (projectUrl: string): void => {
+        startTransition(() => {
+            router.push(projectUrl);
+        });
     };
 
-    const handleViewGithub = (): void => {
-        setIsLoading(true);
-        router.push("/")
+    const handleViewGithub = (githubUrl: string): void => {
+        window.open(githubUrl, '_blank');
     };
 
     const handleViewPageProject = (): void => {
-        setIsLoading(true);
-        router.push("/projects")
+        startProjectPageTransition(() => {
+            router.push("/projects");
+        });
     };
 
     return (
@@ -42,9 +44,9 @@ function ProjectSection() {
                             key={project.id}
                             project={project}
                             index={index}
-                            isLoading={isLoading}
-                            handleViewProject={handleViewProject}
-                            handleViewGithub={handleViewGithub}
+                            isLoading={isPending}
+                            handleViewProject={() => handleViewProject(project.linkProject)}
+                            handleViewGithub={() => handleViewGithub(project.linkGithub)}
                         />
                     ))}
                 </div>
@@ -60,11 +62,19 @@ function ProjectSection() {
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
                         className="font-press-start text-3xl max-w-lg drop-shadow-text-sm">EXPLORE MORE PROJECTS?</motion.h1>
                     <div className="flex items-center justify-end gap-4">
-                        <PixelButton variant="ghost" isLoading={isLoading} loadingText="Loading ..." onClick={handleViewPageProject}>
-                            View Project Page
+                        <PixelButton
+                            variant="ghost"
+                            loadingText="Loading ..."
+                            onClick={handleViewPageProject}
+                            disabled={isProjectPagePending}
+                        >
+                            {isProjectPagePending ? "Loading ..." : "View Project Page"}
                         </PixelButton>
                         or
-                        <PixelButton variant="ghost" >
+                        <PixelButton
+                            variant="ghost"
+                            onClick={() => window.open("https://github.com/zakiyoga", '_blank')}
+                        >
                             Visit My GitHub
                         </PixelButton>
                     </div>
